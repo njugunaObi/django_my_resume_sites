@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
-import dj_database_url
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,12 +80,26 @@ WSGI_APPLICATION = 'my_resume.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'd5go5o0mjvnpm3',
+        'USER': 'mjnpizdtewsjuj',
+        'PASSWORD':'bcf787b97e100dec6f36f68c7d6c76b178d2e933b3427c11288ded2ef3346b67',
+        'HOST': 'ec2-52-45-83-163.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
+
 
 
 # Password validation
@@ -122,9 +136,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'my_resume')
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'views.main_page'),)
+# STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
 django_heroku.settings(locals())
 
 # Default primary key field type
